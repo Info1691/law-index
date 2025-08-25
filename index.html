@@ -7,10 +7,16 @@
 <style>
 :root{ --bg:#0b3a5b; --ink:#0a253b; --panel:#ffffff; --muted:#6b7280;}
 *{box-sizing:border-box}
-body{margin:0; font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background:#f7fafc}
+body{margin:0; font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif; background:#f7fafc}
 header{background:var(--bg); color:#fff; padding:18px 20px;}
-header .wrap{max-width:1020px; margin:0 auto; display:flex; gap:12px; align-items:center;}
-header .brand{width:42px; height:42px; display:grid; place-items:center; background:#fff; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,.08)}
+header .wrap{max-width:1020px; margin:0 auto; display:flex; gap:14px; align-items:center;}
+/* Bigger/wider brand tile */
+header .brand{
+  width:64px; height:64px; display:grid; place-items:center;
+  background:#fff; border-radius:10px; box-shadow:0 1px 2px rgba(0,0,0,.08);
+  padding:6px; /* makes the white feel wider around the logo artwork */
+  object-fit:contain;
+}
 header h1{font-size:18px; margin:0; font-weight:600}
 main{max-width:1020px; margin:22px auto; padding:0 12px;}
 .card{background:var(--panel); border:1px solid #e5e7eb; border-radius:12px; padding:10px 0; box-shadow:0 1px 2px rgba(0,0,0,.04)}
@@ -21,21 +27,21 @@ li a:hover{background:#f9fafb}
 </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <img class="brand" src="./logo.png" alt="Trust Law Textbooks" />
-      <h1>law–index (public artifacts)</h1>
-    </div>
-  </header>
-  <main>
-    <div class="card">
-      <ul>
-        <li><a href="./catalogs/ingest-catalog.json">catalogs/ingest-catalog.json</a></li>
-        <li><a href="./texts/">texts/</a></li>
-        <li><a href="./page-maps/">page-maps/</a></li>
-      </ul>
-    </div>
-    <p class="note">Artifacts are published here by ingest workflows. The UI reads from these URLs.</p>
-  </main>
+<header>
+  <div class="wrap">
+    <img class="brand" src="./logo.png" alt="Trust Law Textbooks" />
+    <h1>law–index (public artifacts)</h1>
+  </div>
+</header>
+<main>
+  <div class="card">
+    <ul>
+      <li><a href="./catalogs/ingest-catalog.json">catalogs/ingest-catalog.json</a></li>
+      <li><a href="./texts/">texts/</a></li>
+      <li><a href="./page-maps/">page-maps/</a></li>
+    </ul>
+  </div>
+  <p class="note">Artifacts are published here by ingest workflows. The UI reads from these URLs.</p>
+</main>
 </body>
 </html>
