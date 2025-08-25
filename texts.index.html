@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Texts — law-index</title>
+  <style>
+    body { font: 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; color: #0b2540; }
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    .muted { color:#6b7b8f; margin-bottom: 16px; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin: 6px 0; }
+    .dir { font-weight: 600; margin-top: 14px; }
+    a { text-decoration: none; color: #1b66d2; }
+    a:hover { text-decoration: underline; }
+    .note { margin-top: 18px; color:#6b7b8f; font-size: 14px; }
+    .spinner { display:inline-block; width:18px; height:18px; border:2px solid #c7d2e1; border-top-color:#1b66d2; border-radius:50%; animation:spin 0.9s linear infinite; vertical-align: -3px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .err { color:#b00020; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <h1>Texts</h1>
+  <div class="muted">Published plain-text artifacts from your ingestion pipeline.</div>
+
+  <div id="status"><span class="spinner"></span> Loading…</div>
+  <div id="out" hidden></div>
+
+  <script>
+    // ---- SETTINGS (change owner/repo if your org/name differs) ----
+    const OWNER = 'Info1691';
+    const REPO  = 'law-index';
+    const BRANCH = 'main';
+
+    // Pages base (e.g., https://info1691.github.io/law-index/)
+    const PAGES_BASE = location.origin + '/' + REPO + '/';
+
+    // GitHub API: list a directory
+    async function listDir(path) {
+      const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`;
+      const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' }});
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${path}`);
+      return res.json();
+    }
+
+    // Recursively collect files under /texts
+    async function collect(path='texts') {
+      const items = await listDir(path);
+      let files = [];
+      for (const item of items) {
+        if (item.type === 'dir') {
+          const sub = await collect(item.path);
+          if (sub.length) files.push({ type:'dir', path: item.path, children: sub });
+        } else if (item.type === 'file') {
+          files.push({ type:'file', path: item.path });
+        }
+      }
+      return files;
+    }
+
+    function render(node, parent) {
+      const ul = document.createElement('ul');
+      parent.appendChild(ul);
+      for (const item of node) {
+        const li = document.createElement('li');
+        if (item.type === 'dir') {
+          li.className = 'dir';
+          li.textContent = '📁 ' + item.path.replace(/^texts\//,'');
+          ul.appendChild(li);
+          render(item.children, li);
+        } else {
+          const rel = item.path; // e.g., texts/uk/Lewin-on-Trusts.txt
+          const a = document.createElement('a');
+          a.href = PAGES_BASE + rel;
+          a.textContent = '📝 ' + rel.replace(/^texts\//,'');
+          li.appendChild(a);
+          ul.appendChild(li);
+        }
+      }
+    }
+
+    (async () => {
+      try {
+        const tree = await collect('texts');
+        const out = document.getElementById('out');
+        const status = document.getElementById('status');
+        status.hidden = true;
+        out.hidden = false;
+
+        if (!tree.length) {
+          out.innerHTML = '<div class="note">No texts published yet. Once your ingest workflow runs, TXT files will appear here.</div>';
+          return;
+        }
+        render(tree, out);
+      } catch (e) {
+        const status = document.getElementById('status');
+        status.innerHTML = `<div class="err">Failed to load listing: ${e.message}. If you see rate-limit errors, try again in a minute.</div>`;
+      }
+    })();
+  </script>
+</body>
+</html>
