@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>law-index / texts</title>
+  <style>
+    :root { --bg:#0b3a5b; --ink:#0b3a5b; --panel:#ffffff; --muted:#6b7280; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background:#f8fafc; color:#111827; }
+    header { background:var(--bg); color:#fff; padding:16px 20px; }
+    header a { color:#fff; text-decoration:none; opacity:.9 }
+    header a:hover { opacity:1 }
+    main { max-width:1100px; margin:22px auto; padding:0 12px; }
+    .toolbar { display:flex; gap:10px; align-items:center; margin-bottom:14px; }
+    .toolbar input { padding:9px 12px; border:1px solid #e5e7eb; border-radius:10px; width:100%; max-width:420px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px; }
+    .card { background:var(--panel); border:1px solid #e5e7eb; border-radius:12px; padding:12px 14px; box-shadow:0 1px 1px rgba(0,0,0,.03); }
+    h3 { font-size:16px; margin:0 0 6px; }
+    .sub { font-size:12px; color:var(--muted); margin-bottom:8px; }
+    .links a { display:inline-block; margin:6px 8px 0 0; padding:7px 10px; font-size:12px; border:1px solid #e5e7eb; border-radius:8px; background:#fff; text-decoration:none; color:#111827; }
+    .links a:hover { border-color:#94a3b8; }
+    .empty { color:var(--muted); padding:30px 0; text-align:center; }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;">
+      <a href="../">← law-index</a>
+      <div style="opacity:.7">/ texts</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Filter by title, jurisdiction, reference…" />
+    </div>
+    <div id="out" class="grid" aria-live="polite"></div>
+    <div id="empty" class="empty" hidden>No items yet.</div>
+  </main>
+
+  <script>
+  (function () {
+    const OUT = document.getElementById('out');
+    const EMPTY = document.getElementById('empty');
+    const Q = document.getElementById('q');
+
+    const CATALOG_URL = '../catalogs/ingest-catalog.json'; // <- produced by ingest
+    let items = [];
+
+    function norm(s){ return (s||'').toLowerCase(); }
+
+    function render(list){
+      OUT.innerHTML = '';
+      if(!list.length){ EMPTY.hidden = false; return; }
+      EMPTY.hidden = true;
+      for(const it of list){
+        const el = document.createElement('div');
+        el.className = 'card';
+        const title = it.title || '(untitled)';
+        const juris = it.jurisdiction || '';
+        const ref = it.reference || '';
+
+        const links = [];
+        if (it.text_url) links.push(`<a href="${it.text_url}">TXT</a>`);
+        if (it.pdf_url)  links.push(`<a href="${it.pdf_url}">PDF</a>`);
+        if (it.page_map_url) links.push(`<a href="${it.page_map_url}">Page-map</a>`);
+
+        el.innerHTML = `
+          <h3>${title}</h3>
+          <div class="sub">${[juris, ref].filter(Boolean).join(' — ')}</div>
+          <div class="links">
+            ${links.length ? links.join('') : '<span class="sub">No artifacts yet.</span>'}
+          </div>`;
+        OUT.appendChild(el);
+      }
+    }
+
+    function applyFilter(){
+      const q = norm(Q.value);
+      if(!q) return render(items);
+      render(items.filter(it => {
+        const hay = [it.title, it.jurisdiction, it.reference].map(norm).join(' ');
+        return hay.includes(q);
+      }));
+    }
+
+    Q.addEventListener('input', applyFilter);
+
+    fetch(CATALOG_URL, {cache:'no-store'})
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(data => {
+        // Accept either {items:[...]} or just [...]
+        const arr = Array.isArray(data) ? data : (data.items || []);
+        items = arr;
+        render(items);
+      })
+      .catch(err => {
+        EMPTY.hidden = false;
+        EMPTY.textContent = `Could not load catalog (${err}).`;
+      });
+  }());
+  </script>
+</body>
+</html>
