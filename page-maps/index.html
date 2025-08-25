@@ -1,34 +1,33 @@
 <!doctype html>
-<html lang="en">
-<head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>law–index / page-maps</title>
+<title>Page maps — law–index</title>
 <style>
-:root { --bg:#0b3a5b; --panel:#ffffff; --muted:#6b7280; }
-* { box-sizing:border-box; }
-body { margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif; background:#f7fafc; color:#111827;}
-header { background:#0b3a5b; color:#fff; padding:18px 20px;}
-header .brand{ display:flex; gap:12px; align-items:center;}
-header .mark{ width:34px; height:34px; display:grid; place-items:center; background:#fff; border-radius:6px; padding:6px; box-shadow:0 1px 2px rgba(0,0,0,.08);}
-main { max-width:920px; margin:28px auto; padding:0 10px;}
-.card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04);}
-h1{ margin:0 0 8px 0; font-size:20px;}
-.muted{ color:#6b7280; font-size:.925rem;}
+:root{ --bg:#0b3a5b; --ink:#0a253b; --panel:#ffffff; --muted:#6b7280;}
+*{box-sizing:border-box}
+body{margin:0; font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background:#f7fafc}
+header{background:var(--bg); color:#fff; padding:18px 20px;}
+header .wrap{max-width:1020px; margin:0 auto; display:flex; gap:12px; align-items:center;}
+header .brand{width:42px; height:42px; display:grid; place-items:center; background:#fff; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,.08)}
+header h1{font-size:18px; margin:0; font-weight:600}
+main{max-width:1020px; margin:22px auto; padding:0 12px;}
+.card{background:var(--panel); border:1px solid #e5e7eb; border-radius:12px; padding:10px 0; box-shadow:0 1px 2px rgba(0,0,0,.04)}
+pre{white-space:pre-wrap; margin:0; padding:14px 16px;}
+a{color:var(--ink)}
+.note{color:var(--muted); font-size:.95em; margin-top:10px; padding:0 2px;}
 </style>
-</head>
-<body>
 <header>
-  <div class="brand">
-    <img class="mark" src="/law-index/logo.png" alt="BB"/>
-    <strong>Trust Law Textbooks — Page Maps</strong>
+  <div class="wrap">
+    <img class="brand" src="../logo.png" alt="Trust Law Textbooks" />
+    <h1>page-maps/ — law–index</h1>
   </div>
 </header>
 <main>
   <div class="card">
-    <h1>page-maps/</h1>
-    <p class="muted">This folder will contain page calibration maps (JSON) published by the ingest job.</p>
+    <pre>Per-PDF JSON maps created by ingest (book page → PDF page and search hit locations).
+Example:
+page-maps/
+  jersey/
+    litigating-trust-disputes-in-jersey-law.page-map.json</pre>
   </div>
+  <p class="note"><a href="../">← back to index</a></p>
 </main>
-</body>
-</html>
