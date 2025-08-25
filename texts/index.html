@@ -4,10 +4,14 @@
 <style>
 :root{ --bg:#0b3a5b; --ink:#0a253b; --panel:#ffffff; --muted:#6b7280;}
 *{box-sizing:border-box}
-body{margin:0; font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background:#f7fafc}
+body{margin:0; font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif; background:#f7fafc}
 header{background:var(--bg); color:#fff; padding:18px 20px;}
-header .wrap{max-width:1020px; margin:0 auto; display:flex; gap:12px; align-items:center;}
-header .brand{width:42px; height:42px; display:grid; place-items:center; background:#fff; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,.08)}
+header .wrap{max-width:1020px; margin:0 auto; display:flex; gap:14px; align-items:center;}
+header .brand{
+  width:64px; height:64px; display:grid; place-items:center;
+  background:#fff; border-radius:10px; box-shadow:0 1px 2px rgba(0,0,0,.08);
+  padding:6px; object-fit:contain;
+}
 header h1{font-size:18px; margin:0; font-weight:600}
 main{max-width:1020px; margin:22px auto; padding:0 12px;}
 .card{background:var(--panel); border:1px solid #e5e7eb; border-radius:12px; padding:10px 0; box-shadow:0 1px 2px rgba(0,0,0,.04)}
@@ -23,13 +27,13 @@ a{color:var(--ink)}
 </header>
 <main>
   <div class="card">
-    <pre>Put cleaned TXT artifacts here (published by your ingest workflow).
-Path structure example:
+    <pre>Cleaned TXT artifacts appear here when ingest runs.
+Example:
 texts/
   uk/
     Lewin-on-Trusts.txt
   jersey/
-    Principles-of-Jersey-Trusts.txt</pre>
+    Litigating-Trust-Disputes-in-Jersey.txt</pre>
   </div>
   <p class="note"><a href="../">← back to index</a></p>
 </main>
