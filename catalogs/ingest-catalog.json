@@ -1,9 +1,11 @@
 [
   {
+    "slug": "jersey-litigating",
     "title": "Litigating Trust Disputes in Jersey",
     "reference": "Sheedy–Baker, Litigating Trust Disputes in Jersey (2020)",
     "jurisdiction": "jersey",
-    "text": "texts/jersey/litigating-trust-disputes-in-jersey.txt",
-    "pageMap": "page-maps/jersey/litigating-trust-disputes-in-jersey.page-map.json"
+    "kind": "pdf",
+    "pageOffset": -83,
+    "txt": "texts/jersey/JERSEY-LITIGATING.txt"
   }
 ]
