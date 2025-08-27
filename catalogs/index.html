@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trust Law Textbooks — Catalog</title>
+<style>
+  :root{--bg:#f5f7fb;--panel:#fff;--ink:#0b355b;--muted:#6b7280}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+  header{background:#0b355b;color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px}
+  header img{width:32px;height:32px}
+  main{max-width:980px;margin:24px auto;padding:0 12px}
+  .card{background:var(--panel);border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  h1{font-size:18px;margin:0 0 8px 0}
+  .meta{color:var(--muted);font-size:13px}
+  a.btn{display:inline-block;margin-top:8px;margin-right:8px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:8px;text-decoration:none}
+  a.btn:hover{border-color:#93c5fd}
+</style>
+</head>
+<body>
+<header>
+  <img src="../logo.png" alt="logo" />
+  <div>Trust Law Textbooks — Catalog</div>
+</header>
+<main>
+  <div id="list">Loading…</div>
+  <p class="meta">Source: <code>catalogs/ingest-catalog.json</code></p>
+</main>
+<script>
+(async function(){
+  const el = document.querySelector('#list');
+  try {
+    const res = await fetch('./ingest-catalog.json', {cache:'no-store'});
+    const data = await res.json();
+    if (!Array.isArray(data) || !data.length) { el.textContent = 'No items published yet.'; return; }
+    // newest first
+    data.sort((a,b) => (b.year||0)-(a.year||0) || a.title.localeCompare(b.title));
+    el.innerHTML = '';
+    for (const it of data) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h1>${it.title}</h1>
+        <div class="meta">${(it.jurisdiction||'').toUpperCase()}${it.year? ' · '+it.year : ''}</div>
+        <div class="meta">${it.reference||''}</div>
+        <div>
+          ${it.txt ? `<a class="btn" href="../${it.txt}">TXT</a>` : ''}
+          ${it.map ? `<a class="btn" href="../${it.map}">Page-map</a>` : ''}
+        </div>
+      `;
+      el.appendChild(card);
+    }
+  } catch (e) {
+    el.textContent = 'Failed to load catalog.';
+  }
+})();
+</script>
+</body>
+</html>
