@@ -11,17 +11,6 @@
     "map": null
   },
   {
-    "slug": "demo-jersey",
-    "title": "Demo Jersey",
-    "reference": "demo",
-    "jurisdiction": "jersey",
-    "kind": "txt",
-    "pageOffset": 0,
-    "year": null,
-    "txt": "texts/jersey/demo-jersey.txt",
-    "map": null
-  },
-  {
     "slug": "litigating-trust-disputes-in-jersey",
     "title": "Litigating Trust Disputes in Jersey",
     "reference": "Sheedy–Baker, Litigating Trusts in Jersey",
@@ -42,6 +31,17 @@
     "year": null,
     "txt": "texts/jersey/litigating-trust-disputes-in-jersey-law.txt",
     "map": "page-maps/jersey/litigating-trust-disputes-in-jersey-law.page-map.json"
+  },
+  {
+    "slug": "breach-of-trust-birks-pretto",
+    "title": "Breach of Trust",
+    "reference": "Birks & Pretto",
+    "jurisdiction": "uk",
+    "kind": "pdf",
+    "pageOffset": 0,
+    "year": 2002,
+    "txt": null,
+    "map": null
   },
   {
     "slug": "lewin-on-trusts-20",
