@@ -5,43 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Trust Law Textbooks — Index</title>
 <style>
-:root{ --bg:#0b3a5b; --ink:#0a253b; --panel:#ffffff; --muted:#6b7280;}
-*{box-sizing:border-box}
-body{margin:0; font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif; background:#f7fafc}
-header{background:var(--bg); color:#fff; padding:18px 20px;}
-header .wrap{max-width:1020px; margin:0 auto; display:flex; gap:14px; align-items:center;}
-/* Bigger/wider brand tile */
-header .brand{
-  width:64px; height:64px; display:grid; place-items:center;
-  background:#fff; border-radius:10px; box-shadow:0 1px 2px rgba(0,0,0,.08);
-  padding:6px; /* makes the white feel wider around the logo artwork */
-  object-fit:contain;
-}
-header h1{font-size:18px; margin:0; font-weight:600}
-main{max-width:1020px; margin:22px auto; padding:0 12px;}
-.card{background:var(--panel); border:1px solid #e5e7eb; border-radius:12px; padding:10px 0; box-shadow:0 1px 2px rgba(0,0,0,.04)}
-ul{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
-li a{display:block; padding:14px 16px; text-decoration:none; color:var(--ink)}
-li a:hover{background:#f9fafb}
-.note{color:var(--muted); font-size:.95em; margin-top:10px; padding:0 2px;}
+  :root{--bg:#f5f7fb;--panel:#fff;--ink:#0b355b;--muted:#6b7280}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+  header{background:#0b355b;color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px}
+  header img{width:32px;height:32px}
+  main{max-width:980px;margin:24px auto;padding:0 12px}
+  .card{background:var(--panel);border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  a{color:inherit;text-decoration:none}
+  .link{display:block;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;margin:10px 0}
+  .muted{color:var(--muted)}
 </style>
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <img class="brand" src="./logo.png" alt="Trust Law Textbooks" />
-    <h1>law–index (public artifacts)</h1>
-  </div>
+  <img src="./logo.png" alt="logo" />
+  <div>Trust Law Textbooks — Index</div>
 </header>
 <main>
   <div class="card">
-    <ul>
-      <li><a href="./catalogs/ingest-catalog.json">catalogs/ingest-catalog.json</a></li>
-      <li><a href="./texts/">texts/</a></li>
-      <li><a href="./page-maps/">page-maps/</a></li>
-    </ul>
+    <h2>law-index (public artifacts)</h2>
+    <a class="link" href="./catalogs/">catalogs/</a>
+    <a class="link" href="./texts/">texts/</a>
+    <a class="link" href="./page-maps/">page-maps/</a>
+    <p class="muted">Artifacts are published here by ingest workflows. The UI reads from these URLs.</p>
   </div>
-  <p class="note">Artifacts are published here by ingest workflows. The UI reads from these URLs.</p>
 </main>
 </body>
 </html>
