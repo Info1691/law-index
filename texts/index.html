@@ -1,39 +1,36 @@
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8" />
-<title>Texts — law–index</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Trust Law Textbooks — Texts</title>
 <style>
-:root{ --bg:#0b3a5b; --ink:#0a253b; --panel:#ffffff; --muted:#6b7280;}
-*{box-sizing:border-box}
-body{margin:0; font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif; background:#f7fafc}
-header{background:var(--bg); color:#fff; padding:18px 20px;}
-header .wrap{max-width:1020px; margin:0 auto; display:flex; gap:14px; align-items:center;}
-header .brand{
-  width:64px; height:64px; display:grid; place-items:center;
-  background:#fff; border-radius:10px; box-shadow:0 1px 2px rgba(0,0,0,.08);
-  padding:6px; object-fit:contain;
-}
-header h1{font-size:18px; margin:0; font-weight:600}
-main{max-width:1020px; margin:22px auto; padding:0 12px;}
-.card{background:var(--panel); border:1px solid #e5e7eb; border-radius:12px; padding:10px 0; box-shadow:0 1px 2px rgba(0,0,0,.04)}
-pre{white-space:pre-wrap; margin:0; padding:14px 16px;}
-a{color:var(--ink)}
-.note{color:var(--muted); font-size:.95em; margin-top:10px; padding:0 2px;}
+  :root{--bg:#f5f7fb;--panel:#fff;--ink:#0b355b;--muted:#6b7280}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+  header{background:#0b355b;color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px}
+  header img{width:32px;height:32px}
+  main{max-width:980px;margin:24px auto;padding:0 12px}
+  .card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:12px 0}
+  a{display:block;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0;text-decoration:none;color:inherit}
 </style>
-<header>
-  <div class="wrap">
-    <img class="brand" src="../logo.png" alt="Trust Law Textbooks" />
-    <h1>texts/ — law–index</h1>
-  </div>
-</header>
+</head>
+<body>
+<header><img src="../logo.png" alt="logo"/><div>Trust Law Textbooks — Texts</div></header>
 <main>
-  <div class="card">
-    <pre>Cleaned TXT artifacts appear here when ingest runs.
-Example:
-texts/
-  uk/
-    Lewin-on-Trusts.txt
-  jersey/
-    Litigating-Trust-Disputes-in-Jersey.txt</pre>
-  </div>
-  <p class="note"><a href="../">← back to index</a></p>
+  <div id="list" class="card">Loading…</div>
+  <p class="muted" style="color:#6b7280">Built from <code>catalogs/ingest-catalog.json</code>.</p>
 </main>
+<script>
+(async function(){
+  const root = location.pathname.replace(/\/texts\/?.*$/,'/');
+  const cat = await (await fetch(root+'catalogs/ingest-catalog.json', {cache:'no-store'})).json();
+  const el = document.querySelector('#list'); el.innerHTML = '';
+  for (const it of cat) if (it.txt) {
+    const a = document.createElement('a');
+    a.href = '../'+it.txt; a.textContent = it.title + ' — ' + (it.jurisdiction||'').toUpperCase();
+    el.appendChild(a);
+  }
+})();
+</script>
+</body>
+</html>
