@@ -6,7 +6,9 @@
     "jurisdiction": "jersey",
     "kind": "pdf",
     "pageOffset": -83,
-    "txt": "texts/jersey/Litigating-Trust-Disputes-in-Jersey.txt"
+    "year": 2020,
+    "txt": "texts/jersey/litigating-trust-disputes-in-jersey.txt",
+    "map": null
   },
   {
     "slug": "demo-jersey",
@@ -15,6 +17,8 @@
     "jurisdiction": "jersey",
     "kind": "txt",
     "pageOffset": 0,
-    "txt": "texts/jersey/Demo-Jersey.txt"
+    "year": null,
+    "txt": "texts/jersey/demo-jersey.txt",
+    "map": null
   }
 ]
