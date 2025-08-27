@@ -1,13 +1,13 @@
 [
   {
-    "slug": "litigating-trust-disputes-in-jersey",
-    "title": "Litigating Trust Disputes in Jersey",
-    "reference": "Sheedy–Baker, Litigating Trusts in Jersey",
+    "slug": "demo",
+    "title": "demo",
+    "reference": "",
     "jurisdiction": "jersey",
-    "kind": "pdf",
-    "pageOffset": -83,
-    "year": 2020,
-    "txt": "texts/jersey/litigating-trust-disputes-in-jersey.txt",
+    "kind": "txt",
+    "pageOffset": 0,
+    "year": null,
+    "txt": "texts/jersey/demo.txt",
     "map": null
   },
   {
@@ -20,5 +20,27 @@
     "year": null,
     "txt": "texts/jersey/demo-jersey.txt",
     "map": null
+  },
+  {
+    "slug": "litigating-trust-disputes-in-jersey",
+    "title": "Litigating Trust Disputes in Jersey",
+    "reference": "Sheedy–Baker, Litigating Trusts in Jersey",
+    "jurisdiction": "jersey",
+    "kind": "pdf",
+    "pageOffset": -83,
+    "year": 2020,
+    "txt": "texts/jersey/litigating-trust-disputes-in-jersey.txt",
+    "map": "page-maps/jersey/litigating-trust-disputes-in-jersey.page-map.json"
+  },
+  {
+    "slug": "litigating-trust-disputes-in-jersey-law",
+    "title": "litigating-trust-disputes-in-jersey-law",
+    "reference": "",
+    "jurisdiction": "jersey",
+    "kind": "pdf",
+    "pageOffset": 0,
+    "year": null,
+    "txt": "texts/jersey/litigating-trust-disputes-in-jersey-law.txt",
+    "map": "page-maps/jersey/litigating-trust-disputes-in-jersey-law.page-map.json"
   }
 ]
