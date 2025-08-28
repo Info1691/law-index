@@ -9,6 +9,15 @@
     "year": 2020,
     "txt": "texts/jersey/litigating-trust-disputes-in-jersey.txt"
   },
+    "slug": "breach-of-trust-text",
+    "title": "breach of trust text",
+    "jurisdiction": "uk",
+    "reference": "Birks-Pretto, Breach of trust",
+    "kind": "pdf",
+    "pageOffset": -210,
+    "year": 2020
+    "txt": "texts/uk/breach-of-trust-text by Birks and Pretto.txt"
+  },
   {
     "slug": "demo-jersey",
     "title": "Demo Jersey",
