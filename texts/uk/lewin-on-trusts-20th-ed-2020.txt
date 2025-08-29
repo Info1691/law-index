@@ -1,0 +1,6 @@
+Lewin on Trusts (20th ed) - placeholder
+Jurisdiction: UK * Year: 2020
+
+This is a temporary placeholder text so the title appears in the catalog and UI.
+When the full PDF or authoritative TXT is available, replace this file with the
+actual source and re-run the ingest. © Copyright rests with the publisher/author.
