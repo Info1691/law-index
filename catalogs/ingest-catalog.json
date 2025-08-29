@@ -45,5 +45,14 @@
     "kind": "txt",
     "pageOffset": 0,
     "txt": "texts/jersey/litigating-trust-disputes-in-jersey-law.txt"
+  },
+  {
+    "slug": "principles-of-jersey-trusts",
+    "title": "Principles Of Jersey Trusts",
+    "reference": "Principles Of Jersey Trusts",
+    "jurisdiction": "jersey",
+    "kind": "txt",
+    "pageOffset": 0,
+    "txt": "texts/jersey/principles-of-jersey-trusts.txt"
   }
 ]
