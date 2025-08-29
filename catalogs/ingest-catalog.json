@@ -1,58 +1,12 @@
 [
   {
-    "slug": "demo-jersey",
-    "title": "Demo Jersey",
-    "reference": "demo",
-    "jurisdiction": "jersey",
-    "kind": "txt",
-    "pageOffset": 0,
-    "year": null,
-    "txt": "texts/jersey/demo-jersey.txt",
-    "map": null
-  },
-  {
-    "slug": "litigating-trust-disputes-in-jersey-law",
-    "title": "litigating-trust-disputes-in-jersey-law",
-    "reference": "",
-    "jurisdiction": "jersey",
-    "kind": "pdf",
-    "pageOffset": 0,
-    "year": null,
-    "txt": "texts/jersey/litigating-trust-disputes-in-jersey-law.txt",
-    "map": "page-maps/jersey/litigating-trust-disputes-in-jersey-law.page-map.json"
-  },
-  {
-    "slug": "breach-of-trust-birks-pretto-2002",
+    "slug": "breach-of-trust-birks-pretto",
     "title": "Breach of Trust",
     "reference": "Birks & Pretto",
     "jurisdiction": "uk",
-    "kind": "pdf",
-    "pageOffset": 0,
+    "kind": "txt",
     "year": 2002,
-    "txt": "texts/uk/breach-of-trust by birks and pretto.txt",
-    "map": null
-  },
-  {
-    "slug": "lewin-on-trusts-20e",
-    "title": "Lewin on Trusts (20th ed)",
-    "reference": "Lewin",
-    "jurisdiction": "uk",
-    "kind": "txt",
     "pageOffset": 0,
-    "year": 2020,
-    "txt": null,
-    "map": null
-  },
- 
-  {
-    "slug": "underhill-hayton-20",
-    "title": "Underhill & Hayton: Law of Trusts (20th ed)",
-    "reference": "UNDERHILL-20",
-    "jurisdiction": "uk",
-    "kind": "txt",
-    "pageOffset": 0,
-    "year": 2020,
-    "txt": null,
-    "map": null
+    "txt": "texts/uk/breach-of-trust-birks-pretto.txt"
   }
 ]
