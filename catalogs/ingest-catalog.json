@@ -29,15 +29,6 @@
     "txt": "texts/uk/breach-of-trust-text-by-birks-and-pretto.txt"
   },
   {
-    "slug": "demo",
-    "title": "Demo",
-    "reference": "Demo",
-    "jurisdiction": "jersey",
-    "kind": "txt",
-    "pageOffset": 0,
-    "txt": "texts/jersey/demo.txt"
-  },
-  {
     "slug": "litigating-trust-disputes-in-jersey-law",
     "title": "Litigating Trust Disputes In Jersey Law",
     "reference": "Litigating Trust Disputes In Jersey Law",
