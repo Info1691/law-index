@@ -1,0 +1,6 @@
+Underhill & Hayton: Law of Trusts (20th ed) - placeholder
+Jurisdiction: UK * Year: 2020
+
+Temporary placeholder for catalog visibility and UI testing.
+Replace with the real PDF/TXT when available and re-run the ingest.
+© Copyright rests with the publisher/author.
