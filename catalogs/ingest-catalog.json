@@ -1,49 +1,51 @@
 [
   {
-    "slug": "lewin-on-trusts-20th-ed-2020",
+    "id": "lewin-20e",
     "title": "Lewin On Trusts 20th Ed 2020",
-    "reference": "Lewin On Trusts 20th Ed 2020",
     "jurisdiction": "uk",
-    "kind": "txt",
     "year": 2020,
-    "pageOffset": 0,
-    "txt": "texts/uk/lewin-on-trusts-20th-ed-2020.txt"
+    "url_txt": "https://info1691.github.io/law-index/data/texts/uk/Lewin-on-Trusts.txt"
   },
   {
-    "slug": "underhill-hayton-law-of-trusts-20th-ed-2020",
-    "title": "Underhill Hayton Law Of Trusts 20th Ed 2020",
-    "reference": "Underhill Hayton Law Of Trusts 20th Ed 2020",
+    "id": "underhill-20-01",
+    "title": "Underhill & Hayton Law of Trusts (20th) — Concepts",
     "jurisdiction": "uk",
-    "kind": "txt",
     "year": 2020,
-    "pageOffset": 0,
-    "txt": "texts/uk/underhill-hayton-law-of-trusts-20th-ed-2020.txt"
+    "url_txt": "https://info1691.github.io/law-index/data/texts/uk/underhill-20-01-concepts.txt"
   },
   {
-    "slug": "breach-of-trust-text-by-birks-and-pretto",
-    "title": "Breach Of Trust Text By Birks And Pretto",
-    "reference": "Breach Of Trust Text By Birks And Pretto",
+    "id": "underhill-20-02",
+    "title": "Underhill & Hayton Law of Trusts (20th) — Creation of Trusts",
     "jurisdiction": "uk",
-    "kind": "txt",
-    "pageOffset": 0,
-    "txt": "texts/uk/breach-of-trust-text-by-birks-and-pretto.txt"
+    "year": 2020,
+    "url_txt": "https://info1691.github.io/law-index/data/texts/uk/underhill-20-02-creation-of-trusts.txt"
   },
   {
-    "slug": "litigating-trust-disputes-in-jersey-law",
-    "title": "Litigating Trust Disputes In Jersey Law",
-    "reference": "Litigating Trust Disputes In Jersey Law",
-    "jurisdiction": "jersey",
-    "kind": "txt",
-    "pageOffset": 0,
-    "txt": "texts/jersey/litigating-trust-disputes-in-jersey-law.txt"
+    "id": "underhill-20-03",
+    "title": "Underhill & Hayton Law of Trusts (20th) — Trustees’ powers, duties and liabilities",
+    "jurisdiction": "uk",
+    "year": 2020,
+    "url_txt": "https://info1691.github.io/law-index/data/texts/uk/underhill-20-03-trustees-powers-duties-and-liabilities.txt"
   },
   {
-    "slug": "principles-of-jersey-trusts",
-    "title": "Principles Of Jersey Trusts",
-    "reference": "Principles Of Jersey Trusts",
+    "id": "birks-pretto",
+    "title": "Breach of Trust — Birks & Pretto",
+    "jurisdiction": "uk",
+    "year": 2002,
+    "url_txt": "https://info1691.github.io/law-index/data/texts/uk/breach-of-trust-text-by-birks-and-pretto.txt"
+  },
+  {
+    "id": "litigating-jersey",
+    "title": "Litigating Trust Disputes in Jersey Law",
     "jurisdiction": "jersey",
-    "kind": "txt",
-    "pageOffset": 0,
-    "txt": "texts/jersey/principles-of-jersey-trusts.txt"
+    "year": 2017,
+    "url_txt": "https://info1691.github.io/law-index/data/texts/jersey/litigating-trust-disputes-in-jersey-law.txt"
+  },
+  {
+    "id": "principles-jersey",
+    "title": "Principles of Jersey Trusts",
+    "jurisdiction": "jersey",
+    "year": 2015,
+    "url_txt": "https://info1691.github.io/law-index/data/texts/jersey/Principles-of-Jersey-Trusts.txt"
   }
 ]
